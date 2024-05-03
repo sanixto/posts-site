@@ -1,4 +1,4 @@
-import Post from '@/app/interfaces/post.interface';
+import Post from '@/interfaces/post.interface';
 import sql from 'better-sqlite3';
 
 const db = new sql('posts.db');

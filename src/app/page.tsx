@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 
 import Posts from '@/components/posts';
 import { getPosts } from '@/lib/posts';
-import Post from './interfaces/post.interface';
+import Post from '../interfaces/post.interface';
 
 async function LatestPosts() {
   const latestPosts: Post[] = await getPosts(2);

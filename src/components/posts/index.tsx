@@ -1,7 +1,7 @@
 import styles from './index.module.css';
 import { formatDate } from '@/lib/format';
 import LikeButton from '../like-icon';
-import PostInterface from '@/app/interfaces/post.interface';
+import PostInterface from '@/interfaces/post.interface';
 
 function Post({ post } : { post: PostInterface }) {
   return (
