@@ -2,12 +2,13 @@ import styles from './index.module.css';
 import { formatDate } from '@/lib/format';
 import LikeButton from '../like-icon';
 import PostInterface from '@/interfaces/post.interface';
+import Image from 'next/image';
 
 function Post({ post } : { post: PostInterface }) {
   return (
     <article className={styles.post}>
       <div className={styles.image}>
-        <img src={post.imageUrl} alt={post.title} />
+        <Image src={post.imageUrl} alt={post.title} fill />
       </div>
       <div className={styles.content}>
         <header>

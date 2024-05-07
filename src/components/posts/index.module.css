@@ -40,3 +40,9 @@
   font-size: 0.9rem;
   color: #b1a9ac;
 }
+
+.image {
+  position: relative;
+  width: 7rem;
+  height: 7rem;
+}
