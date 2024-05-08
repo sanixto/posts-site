@@ -34,11 +34,3 @@ main {
 #latest-posts {
   margin-top: 2rem;
 }
-
-.liked .like-button svg {
-  fill: #e32195;
-}
-
-.liked .like-button:hover svg {
-  fill: transparent;
-}

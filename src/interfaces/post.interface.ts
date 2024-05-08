@@ -5,4 +5,5 @@ export default interface Post {
   content: string,
   createdAt: string,
   userId: number,
+  isLiked: 0 | 1,
 }

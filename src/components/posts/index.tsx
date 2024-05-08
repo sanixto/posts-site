@@ -3,6 +3,7 @@ import { formatDate } from '@/lib/format';
 import LikeButton from '../like-icon';
 import PostInterface from '@/interfaces/post.interface';
 import Image from 'next/image';
+import { togglePostLikeStatus } from '@/actions/posts';
 
 function Post({ post } : { post: PostInterface }) {
   return (
@@ -15,14 +16,18 @@ function Post({ post } : { post: PostInterface }) {
           <div>
             <h2>{post.title}</h2>
             <p>
-              {/* Shared by {post.userFirstName} on{' '} */}
               <time dateTime={post.createdAt}>
                 {formatDate(post.createdAt)}
               </time>
             </p>
           </div>
           <div>
-            <LikeButton />
+            <form
+              action={togglePostLikeStatus.bind(null, post.id)}
+              className={post.isLiked ? styles.liked : ''}
+            >
+              <LikeButton />
+            </form>
           </div>
         </header>
         <p>{post.content}</p>

@@ -46,3 +46,11 @@
   width: 7rem;
   height: 7rem;
 }
+
+.liked button svg {
+  fill: #e32195;
+}
+
+.liked button:hover svg {
+  fill: transparent;
+}
