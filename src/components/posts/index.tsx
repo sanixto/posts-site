@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import Image, { ImageLoaderProps } from 'next/image';
 import { useOptimistic } from 'react';
 
 import styles from './index.module.css';
@@ -14,12 +14,17 @@ interface PostProps {
   action: (postId: number) => Promise<void>,
 }
 
+function imageLoader(config: ImageLoaderProps): string {
+  const [urlStart, urlEnd] = config.src.split('upload/');
+  const transformations = `w_200,q_${config.quality}`;
+  return `${urlStart}upload/${transformations}/${urlEnd}`;
+}
+
 function Post({ post, action } : PostProps) {
-  console.log(post)
   return (
     <article className={styles.post}>
       <div className={styles.image}>
-        <Image src={post.imageUrl} alt={post.title} fill />
+        <Image src={post.imageUrl} alt={post.title} width={200} height={150} loader={imageLoader} quality={50}/>
       </div>
       <div className={styles.content}>
         <header>
