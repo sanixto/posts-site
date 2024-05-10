@@ -14,12 +14,6 @@
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
-.post img {
-  width: 8rem;
-  height: 6rem;
-  object-fit: cover;
-}
-
 .content {
   flex: 1;
 }
@@ -45,6 +39,10 @@
   position: relative;
   width: 7rem;
   height: 7rem;
+}
+
+.image img {
+  object-fit: cover;
 }
 
 .liked button svg {
